@@ -1,0 +1,23 @@
+@import "../../scss/mixins/rem";
+
+.logo {
+  $block-name: &; // #{$block-name}__element
+
+  display: none;
+  width: rem(140px);
+  aspect-ratio: 111/80;
+
+  @media screen and (min-width: $screen-tl) {
+    display: block;
+    width: rem(111px);
+  }
+
+  &--mobile {
+    display: block;
+    aspect-ratio: 140/40;
+
+    @media screen and (min-width: $screen-tl) {
+      display: none;
+    }
+  }
+}

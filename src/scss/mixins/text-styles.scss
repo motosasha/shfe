@@ -1,0 +1,86 @@
+@import "fluid";
+@import "rem";
+
+@mixin nav {
+  font-weight: 500;
+  font-size: rem(16px);
+  line-height: 1.25;
+}
+
+@mixin side-nav($weight: 500) {
+  font-weight: $weight;
+  font-size: rem(14px);
+  line-height: 1.15;
+}
+
+@mixin side-nav-sub($weight: 500) {
+  font-weight: $weight;
+  font-size: rem(12px);
+  line-height: 1;
+}
+
+@mixin breadcrumbs {
+  font-weight: 500;
+  font-size: rem(14px);
+  line-height: 1.15;
+}
+
+@mixin diagram-button {
+  font-weight: 700;
+  font-size: rem(14px);
+  line-height: 1.15;
+}
+
+@mixin body($weight: 400) {
+  font-weight: $weight;
+  font-size: rem(16px);
+  line-height: 1.25;
+}
+
+@mixin header {
+  font-weight: 700;
+  font-size: rem(24px);
+  line-height: 1.3334;
+}
+
+@mixin subheader {
+  font-weight: 700;
+  font-size: rem(12px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@mixin year {
+  font-weight: 700;
+  font-size: rem(20px);
+  line-height: 1.2;
+}
+
+@mixin month {
+  font-weight: 700;
+  font-size: rem(12px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-feature-settings: "cpsp" on;
+}
+
+@mixin entry {
+  font-weight: 700;
+  font-size: rem(16px);
+  line-height: 1;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+
+@mixin label {
+  font-weight: 500;
+  font-size: rem(14px);
+  line-height: 1.1429;
+}
+
+@mixin bar-label {
+  font-weight: 500;
+  font-size: rem(12px);
+  line-height: 1;
+}

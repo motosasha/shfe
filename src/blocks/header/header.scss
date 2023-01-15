@@ -1,0 +1,135 @@
+@import "../../scss/mixins/flex-center";
+@import "../../scss/mixins/fluid";
+@import "../../scss/mixins/rem";
+@import "../../scss/mixins/text-styles";
+
+.header {
+  $block-name: &; // #{$block-name}__element
+
+  background: var(--back-primary);
+  border-bottom: rem(1px) solid var(--back-tertiary);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(12px) 0 rem(11px);
+
+    @media screen and (min-width: $screen-ti) {
+      padding: rem(20px) 0 rem(19px);
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      gap: rem(32px);
+    }
+
+    @media screen and (min-width: $screen-d) {
+      gap: rem(40px);
+    }
+  }
+
+  &__logo {
+    @media screen and (min-width: $screen-tl) {
+      width: rem(120px);
+    }
+
+    @media screen and (min-width: $screen-d) {
+      width: rem(192px);
+    }
+  }
+
+  &__nav {
+    display: none;
+    gap: rem(24px);
+
+    @media screen and (min-width: $screen-tl) {
+      display: flex;
+      margin-right: auto;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      gap: rem(40px);
+    }
+  }
+
+  &__nav-item {
+    @include nav;
+
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__actions {
+    display: flex;
+    gap: rem(16px);
+    align-items: center;
+  }
+
+  &__action {
+    @include flex-center;
+
+    position: relative;
+    padding: rem(9px);
+    border: rem(1px) solid var(--front-tertiary);
+    border-radius: rem(20px);
+
+    @media screen and (min-width: $screen-tl) {
+      padding: rem(13px);
+      border-radius: rem(24px);
+    }
+
+    &--balls {
+      @include body;
+
+      display: none;
+      gap: rem(4px);
+
+      @media screen and (min-width: $screen-tl) {
+        display: flex;
+        padding: rem(13px) rem(27px);
+      }
+    }
+
+    &--notification[data-noty="true"]::before {
+      position: absolute;
+      top: rem(-3px);
+      right: rem(-3px);
+      display: block;
+      width: rem(8px);
+      height: rem(8px);
+      background: var(--color-yellow);
+      border-radius: 50%;
+      content: "";
+    }
+
+    &--user {
+      overflow: hidden;
+    }
+
+    &--logout {
+      display: none;
+
+      @media screen and (min-width: $screen-tl) {
+        display: block;
+      }
+    }
+  }
+
+  &__balls {
+    @include body(700);
+  }
+
+  &__avatar {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__icon {
+    width: rem(20px);
+    height: rem(20px);
+    fill: none;
+  }
+}

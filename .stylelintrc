@@ -1,0 +1,32 @@
+{
+  "customSyntax": "postcss-scss",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss",
+    "stylelint-config-rational-order/plugin"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "/^at-/",
+        "/^mixin/",
+        "/^include/",
+        "/^if/",
+        "/^else/",
+        "/^function/",
+        "/^return/",
+        "/^each/",
+        "/^while/",
+        "use"
+      ]
+    }],
+    "function-no-unknown": null,
+    "import-notation": "string",
+    "value-keyword-case": null,
+    "value-list-comma-newline-after": null
+  }
+}

@@ -1,0 +1,42 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header)
+
+mixin header(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +header('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' header--' + modsList[i].trim();
+      }
+    }
+
+  .header(class=allMods)&attributes(attributes)
+    .grid
+      .header__inner
+        .header__logo
+          svg.logo.logo--mobile
+            use(href='img/svgSprite.svg#logo__shfe--mobile')
+          svg.logo
+            use(href='img/svgSprite.svg#logo__shfe')
+        nav.header__nav
+          each item in edging.header.headerNav
+            a.header__nav-item(href= item.href)!= item.title
+        .header__actions
+          .header__action.header__action--balls Мои баллы: #[span.header__balls 132]
+          .header__action.header__action--notification(data-noty='true')
+            svg.header__icon
+              use(xlink:href='img/svgSprite.svg#icon__notification')
+          .header__action.header__action--user
+            img.header__avatar(src='img/img__avatar.jpg', alt='username')
+            svg.header__icon
+              use(xlink:href='img/svgSprite.svg#icon__user--2')
+          .header__action.header__action--logout
+            svg.header__icon
+              use(xlink:href='img/svgSprite.svg#icon__logout')
