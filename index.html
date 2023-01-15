@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="google" content="notranslate">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/pt-root-ui_regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/pt-root-ui_medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/pt-root-ui_bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#5bbad5">
+  <meta name="theme-color" content="#000">
+  <meta name="msapplication-navbutton-color" content="#000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <title>Стартовая страница</title>
+  <meta name="description" content="description">
+  <meta name="keywords" content="keywords">
+  <link rel="stylesheet" href="css/style.css"><script>// Убрать на html класс "no-js", добавить класс "js": с уровня стилей знаем работает ли JS
+document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+// Браузер и ОС
+function cth(c){document.documentElement.classList.add(c)}
+'ontouchstart' in window?cth('touch'):cth('no-touch');
+if(typeof InstallTrigger!=='undefined')cth('firefox');
+if(/constructor/i.test(window.HTMLElement)||(function(p){return p.toString()==="[object SafariRemoteNotification]"})(!window['safari']||(typeof safari!=='undefined'&&safari.pushNotification)))cth('safari');
+if(/*@cc_on!@*/!!document.documentMode)cth('ie');
+if(!(!!document.documentMode)&&!!window.StyleMedia)cth('edge');
+if(!!window.chrome&&(!!window.chrome.webstore||!!window.chrome.runtime))cth('chrome');
+if(~navigator.appVersion.indexOf("Win"))cth('windows');
+if(~navigator.appVersion.indexOf("Mac"))cth('osx');
+if(~['iPad','iPhone','iPod'].indexOf(navigator.platform))cth('ios');
+if(~navigator.appVersion.indexOf("Linux"))cth('linux');
+
+// Добавление 1vh (использование: height: 100vh; height: calc(var(--vh, 1vh) * 100);) для фикса 100vh на мобилках
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+</script>
+</head>
+
+<body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
+  <div class="page">
+    <div class="page__header">
+      <div class="header">
+        <div class="grid">
+          <div class="header__inner">
+            <div class="header__logo"><svg class="logo logo--mobile">
+                <use href="img/svgSprite.svg#logo__shfe--mobile"></use>
+              </svg><svg class="logo">
+                <use href="img/svgSprite.svg#logo__shfe"></use>
+              </svg></div>
+            <nav class="header__nav"><a class="header__nav-item" href="#">О проекте</a><a class="header__nav-item" href="#">Курсы</a><a class="header__nav-item" href="#">Проверь себя</a><a class="header__nav-item" href="#">Возможности</a></nav>
+            <div class="header__actions">
+              <div class="header__action header__action--balls">Мои баллы: <span class="header__balls">132</span></div>
+              <div class="header__action header__action--notification" data-noty="true"><svg class="header__icon">
+                  <use xlink:href="img/svgSprite.svg#icon__notification"></use>
+                </svg></div>
+              <div class="header__action header__action--user"><img class="header__avatar" src="img/img__avatar.jpg" alt="username" /><svg class="header__icon">
+                  <use xlink:href="img/svgSprite.svg#icon__user--2"></use>
+                </svg></div>
+              <div class="header__action header__action--logout"><svg class="header__icon">
+                  <use xlink:href="img/svgSprite.svg#icon__logout"></use>
+                </svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page__main"></div>
+    <div class="page__footer">
+      <footer class="footer">
+        <div class="grid">
+          <div class="footer__inner">
+            <div class="footer__copy">2022 © Клуб финансовой эффективности</div>
+            <div class="footer__links"><a class="footer__link" href="#" target="_blank">Пользовательское соглашение</a><a class="footer__link" href="#" target="_blank">Политика конфиденциальности</a></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div><script src="js/bundle.js"></script>
+</body>
+
+</html>
