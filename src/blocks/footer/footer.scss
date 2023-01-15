@@ -1,0 +1,32 @@
+@import "../../scss/mixins/text-styles";
+
+.footer {
+  $block-name: &; // #{$block-name}__element
+
+  padding: rem(23px) 0 rem(24px);
+  border-top: rem(1px) solid var(--back-tertiary);
+
+  &__inner {
+    display: grid;
+    gap: rem(16px);
+    justify-items: center;
+  }
+
+  &__copy {
+    @include label;
+  }
+
+  &__links {
+    display: grid;
+    gap: rem(8px);
+    justify-content: center;
+  }
+
+  &__link {
+    @include side-nav-sub;
+
+    color: var(--front-secondary);
+    text-align: center;
+    text-decoration: none;
+  }
+}

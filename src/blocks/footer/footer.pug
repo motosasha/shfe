@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (footer)
+
+mixin footer(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +footer('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' footer--' + modsList[i].trim();
+      }
+    }
+
+  footer.footer(class=allMods)&attributes(attributes)
+    .grid
+      .footer__inner
+        .footer__copy 2022 © Клуб финансовой эффективности
+        .footer__links
+          each link in edging.footer.footerLinks
+            a.footer__link(href= link.href, target='_blank')!= link.title

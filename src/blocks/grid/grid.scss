@@ -1,0 +1,14 @@
+@import "../../scss/mixins/rem";
+
+.grid {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+
+  @media screen and (min-width: $screen-t) {
+    width: calc(100% - 4rem);
+  }
+
+  @media screen and (min-width: $screen-d) {
+    width: calc(100% - 5rem);
+  }
+}

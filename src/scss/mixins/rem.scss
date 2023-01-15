@@ -1,0 +1,10 @@
+//- Принимает:
+//-   $num    {string} - величина в пикселях
+//- Примеры использования:
+//-   font-size: rem(16px)
+
+@function rem($num) {
+  $strip-unit: calc($num / ($num * 0 + 1px));
+
+  @return calc($strip-unit / 16) * 1rem;
+}
