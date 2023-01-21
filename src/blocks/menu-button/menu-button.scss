@@ -1,0 +1,10 @@
+@import "../../scss/mixins/rem";
+
+.menu-button {
+  width: rem(48px);
+  height: rem(48px);
+  background: var(--back-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-default);
+  cursor: pointer;
+}

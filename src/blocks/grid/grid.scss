@@ -11,4 +11,22 @@
   @media screen and (min-width: $screen-d) {
     width: calc(100% - 5rem);
   }
+
+  &__columns {
+    @media screen and (min-width: $screen-tl) {
+      display: grid;
+      grid-template-columns: rem(192px) auto;
+      gap: rem(40px);
+    }
+  }
+
+  &__col {
+    &--nav {
+      display: none;
+
+      @media screen and (min-width: $screen-tl) {
+        display: block;
+      }
+    }
+  }
 }

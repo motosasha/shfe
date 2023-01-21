@@ -1,0 +1,96 @@
+@import "../../scss/mixins/list-reset";
+@import "../../scss/mixins/rem";
+@import "../../scss/mixins/text-styles";
+
+.nav {
+  $block-name: &; // #{$block-name}__element
+
+  &__section {
+    padding-bottom: rem(16px);
+
+    & + & {
+      padding-top: rem(16px);
+      border-top: rem(1px) solid var(--front-tertiary);
+    }
+  }
+
+  &__section-title {
+    @include subheader;
+
+    margin: rem(8px) 0;
+    color: var(--front-secondary);
+  }
+
+  &__list {
+    @include list-reset;
+
+    display: grid;
+    gap: rem(8px);
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+
+    &--active::after {
+      position: absolute;
+      top: rem(-2px);
+      right: rem(-16px);
+      bottom: rem(-2px);
+      left: rem(-32px);
+      z-index: 0;
+      display: block;
+      background: var(--color-yellow);
+      border-radius: 0 rem(24px) rem(24px) 0;
+      content: "";
+
+      @media screen and (min-width: $screen-tl) {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: rem(-40px);
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: rem(8px);
+    align-items: center;
+    padding: rem(4px) 0;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    #{$block-name}__item--active & {
+      pointer-events: none;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      padding: rem(8px) 0;
+    }
+  }
+
+  &__link-icon {
+    width: rem(24px);
+    height: rem(24px);
+    fill: none;
+    stroke: var(--front-primary);
+    stroke-width: rem(2px);
+    stroke-linecap: round;
+  }
+
+  &__link-title {
+    @include side-nav;
+
+    @media screen and (min-width: $screen-tl) {
+      max-width: rem(96px);
+    }
+  }
+}

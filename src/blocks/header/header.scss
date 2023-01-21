@@ -44,11 +44,12 @@
 
     @media screen and (min-width: $screen-tl) {
       display: flex;
-      margin-right: auto;
+      margin: auto;
     }
 
     @media screen and (min-width: $screen-d) {
       gap: rem(40px);
+      margin: 0 auto 0 0;
     }
   }
 
@@ -86,6 +87,10 @@
 
       @media screen and (min-width: $screen-tl) {
         display: flex;
+        padding: rem(13px) rem(15px);
+      }
+
+      @media screen and (min-width: $screen-d) {
         padding: rem(13px) rem(27px);
       }
     }

@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (nav)
+
+mixin nav(num)
+  nav.nav
+    each section, index in edging.nav
+      if index <= num
+        .nav__section
+          if(section.title)
+            .nav__section-title!= section.title
+          ul.nav__list
+            each item in section.items
+              li.nav__item(class= activeItem === item.icon ? 'nav__item--active': '')
+                a.nav__link(href= item.href)
+                  svg.nav__link-icon
+                    use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+                  .nav__link-title!= item.title

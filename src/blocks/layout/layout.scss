@@ -1,0 +1,7 @@
+@import "../../scss/mixins/rem";
+
+.layout {
+  $block-name: &; // #{$block-name}__element
+
+  padding: rem(24px) 0;
+}

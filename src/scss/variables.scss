@@ -14,6 +14,13 @@
   --font-size-base: 1rem;
   --font-weight-base: 400;
   --line-height-base: 1.25;
+  --shadow-default:
+    0 60px 80px rgb(49 86 166 / 3.37%),
+    0 38.8889px 46.8519px rgb(49 86 166 / 5.5%),
+    0 23.1111px 25.4815px rgb(49 86 166 / 7%),
+    0 12px 13px rgb(49 86 166 / 8.5%),
+    0 4.8889px 6.5185px rgb(49 86 166 / 10.6%),
+    0 1.1111px 3.1481px rgb(49 86 166 / 14%);
 
   // Семантические цвета
 
@@ -32,6 +39,7 @@
   --color-blue: #3156a6;
   --color-dark-blue: #102e6a;
   --color-violet: #6b59a5;
+  --bg-darker: rgb(0 0 0 / 25%);
 }
 
 $screen-m: 0;

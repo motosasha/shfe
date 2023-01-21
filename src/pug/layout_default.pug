@@ -56,13 +56,27 @@ html(class='no-js', lang='ru')
     noscript У вас отключен JavaScript. Это пугает.
 
     .page
+      .page__menu-button
+        +menu-button
+      .page__nav
+        .mobile-nav
+          .mobile-nav__scroll
+            .mobile-nav__inner
+              +nav(3)
       .page__header
         +header
       .page__main
-        block content
-          .content-filler content-filler
+        .layout
+          .grid
+            .grid__columns
+              .grid__col.grid__col--nav
+                +nav(2)
+              .grid__col.grid__col--main
+                block content
+                  .content-filler content-filler
       .page__footer
         +footer
+      .page__darker
 
     block templates
 

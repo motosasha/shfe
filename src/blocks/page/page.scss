@@ -1,3 +1,5 @@
+@import "../../scss/mixins/rem";
+
 .page {
   $block-name: &; // #{$block-name}__element
 
@@ -6,12 +8,37 @@
   min-height: 100svh;
   background: var(--back-primary);
 
+  @media screen and (min-width: $screen-tl) {
+    overflow: hidden;
+    border-radius: rem(16px);
+  }
+
   &__header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
     flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: rem(16px) rem(16px) 0 0;
+
+    [data-state="mobile-menu"] & {
+      width: calc(100vw - var(--scrollbar-width));
+    }
   }
 
   &__main {
     flex: 1 0 auto;
+    padding-top: rem(64px);
+
+    @media screen and (min-width: $screen-ti) {
+      padding-top: rem(80px);
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      padding-top: rem(120px);
+    }
   }
 
   &__footer {
@@ -19,6 +46,62 @@
 
     @media screen and (min-width: $screen-tl) {
       display: none;
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    z-index: 4;
+    height: 100svh;
+
+    @media screen and (min-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  &__darker {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background: var(--bg-darker);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+
+    @media screen and (min-width: $screen-tl) {
+      display: none;
+    }
+
+    [data-state="mobile-menu"] & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__menu-button {
+    position: fixed;
+    right: rem(16px);
+    bottom: rem(16px);
+    z-index: 5;
+
+    @media screen and (min-width: $screen-tl) {
+      display: none;
+    }
+  }
+
+  .headroom {
+    transition: transform 0.25s linear;
+    will-change: transform;
+
+    &--pinned {
+      transform: translateY(0%);
+    }
+
+    &--unpinned {
+      transform: translateY(-100%);
     }
   }
 }

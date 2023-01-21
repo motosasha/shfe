@@ -1,0 +1,27 @@
+@import "../../scss/mixins/rem";
+
+.mobile-nav {
+  $block-name: &; // #{$block-name}__element
+
+  width: rem(280px);
+  height: 100%;
+  background: var(--back-primary);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  will-change: transform;
+
+  [data-state="mobile-menu"] & {
+    transform: translateX(0);
+  }
+
+  &__scroll {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  &__inner {
+    padding: rem(40px) rem(32px);
+  }
+}

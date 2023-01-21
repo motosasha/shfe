@@ -1,0 +1,48 @@
+.burger {
+  $block-name: &; // #{$block-name}__element
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  user-select: none;
+
+  [data-state="mobile-menu"] & {
+    transform: rotate(45deg);
+  }
+
+  &__line {
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    fill: none;
+    stroke: var(--color-blue);
+    stroke-width: 2;
+    stroke-linecap: round;
+
+    &--top {
+      stroke-dasharray: 14 30;
+    }
+
+    &--middle {
+      //stroke-dasharray: 40 142;
+      transform-origin: 50%;
+      transition: transform 400ms;
+    }
+
+    &--bottom {
+      stroke-dasharray: 10 32;
+      transform-origin: 50%;
+      transition: transform 400ms, stroke-dashoffset 400ms;
+    }
+
+    [data-state="mobile-menu"] &--top {
+      stroke-dashoffset: -25px;
+    }
+
+    [data-state="mobile-menu"] &--middle {
+      transform: rotate(90deg);
+    }
+
+    [data-state="mobile-menu"] &--bottom {
+      stroke-dashoffset: -23px;
+    }
+  }
+}
