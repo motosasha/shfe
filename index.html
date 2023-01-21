@@ -24,7 +24,7 @@
   <meta name="theme-color" content="#000">
   <meta name="msapplication-navbutton-color" content="#000">
   <meta name="apple-mobile-web-app-status-bar-style" content="#000">
-  <title>Стартовая страница</title>
+  <title>Окантовка</title>
   <meta name="description" content="description">
   <meta name="keywords" content="keywords">
   <link rel="stylesheet" href="css/style.css"><script>// Убрать на html класс "no-js", добавить класс "js": с уровня стилей знаем работает ли JS
@@ -55,6 +55,95 @@ window.addEventListener('resize', () => {
 
 <body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
   <div class="page">
+    <div class="page__menu-button">
+      <div class="menu-button"><svg class="burger" width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path class="burger__line burger__line--top" d="M17 18H33C33 18 36 18 36 21C36 24 33 24 33 24H15"></path>
+          <path class="burger__line burger__line--middle" d="M15 24H33"></path>
+          <path class="burger__line burger__line--bottom" d="M29 30H15C15 30 12 30 12 27C12 24 15 24 15 24H33"></path>
+        </svg></div>
+    </div>
+    <div class="page__nav">
+      <div class="mobile-nav">
+        <div class="mobile-nav__scroll">
+          <div class="mobile-nav__inner">
+            <nav class="nav">
+              <div class="nav__section">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__test"></use>
+                      </svg>
+                      <div class="nav__link-title">Мои результаты</div>
+                    </a></li>
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__course"></use>
+                      </svg>
+                      <div class="nav__link-title">Мои курсы</div>
+                    </a></li>
+                </ul>
+              </div>
+              <div class="nav__section">
+                <div class="nav__section-title">Мой финансист</div>
+                <ul class="nav__list">
+                  <li class="nav__item nav__item--active"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__fin-plan"></use>
+                      </svg>
+                      <div class="nav__link-title">Финансовое планирование</div>
+                    </a></li>
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__fin-uchet"></use>
+                      </svg>
+                      <div class="nav__link-title">Финансовый учёт</div>
+                    </a></li>
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__fin-analiz"></use>
+                      </svg>
+                      <div class="nav__link-title">Финансовый анализ</div>
+                    </a></li>
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__fin-reshenia"></use>
+                      </svg>
+                      <div class="nav__link-title">Финансовое решения</div>
+                    </a></li>
+                </ul>
+              </div>
+              <div class="nav__section">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__user"></use>
+                      </svg>
+                      <div class="nav__link-title">Моё профиль</div>
+                    </a></li>
+                </ul>
+              </div>
+              <div class="nav__section">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__rocket"></use>
+                      </svg>
+                      <div class="nav__link-title">О проекте</div>
+                    </a></li>
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__courses"></use>
+                      </svg>
+                      <div class="nav__link-title">Курсы</div>
+                    </a></li>
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__test"></use>
+                      </svg>
+                      <div class="nav__link-title">Проверь себя</div>
+                    </a></li>
+                  <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                        <use xlink:href="img/svgSprite.svg#icon__opportunities"></use>
+                      </svg>
+                      <div class="nav__link-title">Возможности</div>
+                    </a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="page__header">
       <div class="header">
         <div class="grid">
@@ -81,7 +170,69 @@ window.addEventListener('resize', () => {
         </div>
       </div>
     </div>
-    <div class="page__main"></div>
+    <div class="page__main">
+      <div class="layout">
+        <div class="grid">
+          <div class="grid__columns">
+            <div class="grid__col grid__col--nav">
+              <nav class="nav">
+                <div class="nav__section">
+                  <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                          <use xlink:href="img/svgSprite.svg#icon__test"></use>
+                        </svg>
+                        <div class="nav__link-title">Мои результаты</div>
+                      </a></li>
+                    <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                          <use xlink:href="img/svgSprite.svg#icon__course"></use>
+                        </svg>
+                        <div class="nav__link-title">Мои курсы</div>
+                      </a></li>
+                  </ul>
+                </div>
+                <div class="nav__section">
+                  <div class="nav__section-title">Мой финансист</div>
+                  <ul class="nav__list">
+                    <li class="nav__item nav__item--active"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                          <use xlink:href="img/svgSprite.svg#icon__fin-plan"></use>
+                        </svg>
+                        <div class="nav__link-title">Финансовое планирование</div>
+                      </a></li>
+                    <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                          <use xlink:href="img/svgSprite.svg#icon__fin-uchet"></use>
+                        </svg>
+                        <div class="nav__link-title">Финансовый учёт</div>
+                      </a></li>
+                    <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                          <use xlink:href="img/svgSprite.svg#icon__fin-analiz"></use>
+                        </svg>
+                        <div class="nav__link-title">Финансовый анализ</div>
+                      </a></li>
+                    <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                          <use xlink:href="img/svgSprite.svg#icon__fin-reshenia"></use>
+                        </svg>
+                        <div class="nav__link-title">Финансовое решения</div>
+                      </a></li>
+                  </ul>
+                </div>
+                <div class="nav__section">
+                  <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="#"><svg class="nav__link-icon">
+                          <use xlink:href="img/svgSprite.svg#icon__user"></use>
+                        </svg>
+                        <div class="nav__link-title">Моё профиль</div>
+                      </a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="grid__col grid__col--main">
+              <div style="height: 2000px">content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="page__footer">
       <footer class="footer">
         <div class="grid">
@@ -92,6 +243,7 @@ window.addEventListener('resize', () => {
         </div>
       </footer>
     </div>
+    <div class="page__darker"></div>
   </div><script src="js/bundle.js"></script>
 </body>
 
